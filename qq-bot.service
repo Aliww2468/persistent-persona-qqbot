@@ -1,0 +1,17 @@
+[Unit]
+Description=QQ AI 聊天机器人 (NoneBot2)
+After=network.target
+
+[Service]
+Type=simple
+# 改成你的实际用户名和项目路径
+User=ubuntu
+WorkingDirectory=/home/ubuntu/qq_bot
+ExecStart=/home/ubuntu/qq_bot/venv/bin/python bot.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
